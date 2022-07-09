@@ -1,47 +1,4 @@
-const employee = document.querySelector('.cardHolder');
-{/* <div class="card">
-            <img src="img/Ghazi.jpg">
-            <div class="cardText">
-              <p class="EmployeeID">7281</p>
-              <p class="fullName">Ghazi Samer</p>
-              <h2 class="Department">Junior</h2>
-              <h5>★★★★</h5>
-              <p class="Salary">$675</p>
-              </div> */}
 
-            /* 
-                function createCard(img, EmployeeID, FullName, Department, Level, Salary) {
-                let code =`
-                
-                <div class="cardText">
-                <img src="${img}">
-              <p class="EmployeeID">"${EmployeeID}"</p>
-              <p class="fullName">"${FullName}"</p>
-              <h2 class="Level">${Level}</h2>
-              <p class="Department">${Department}</p>
-              <h5>★★★★</h5>
-              <p class="Salary">"${Salary}"</p>
-              </div>
-                `;
-                employee.innerHTML += code;
-                }
-
-                let item4=["img/Ghazi.jpg",
-                "shows",
-                "men's fashion wear",
-                "Reebok",
-                "★★★",
-                "1000",
-                "30%Off"];
-                                          I
-                    createCard(item4);
-                    createCard(item2);
-                    createCard(item3);
- */
-
-
-
-              
                function Employee ( ImageUrl,FullName, Department, Level, EmployeeID, Salary) {
                 this.name = EmployeeID;
                 this.fullName = FullName;
@@ -57,7 +14,7 @@ const employee = document.querySelector('.cardHolder');
 const Department = ['IT', 'HR', 'Sales'];
 const Level = ['Junior', 'Mid-Senior', 'Senior'];
 
-//create a new object
+//create  new objects
 
 const Employee1 = new Employee ("../img/Ghazi.jpg",generateId(),'Ghazi Samer', Level[2], Department[2],  '$10000');
 const Employee2 = new Employee ("../img/Lana.jpg",generateId(),'Lana Ali',     Level[2], Department[1], '$2000');
@@ -147,7 +104,7 @@ for(let i = 0; i < employees.length; i++) {
 Employee.prototype.card = function () {
     document.write(`<div class="card">
     <div class="card-body">
-        <img src="${this.imageUrl}" alt="">
+    <img src="${this.imageUrl}" alt="">
         <h5 class="card-title">${this.fullName}</h5>
         <p class="card-text">${this.department}</p>
         <p class="card-text">${this.level}</p>
@@ -188,23 +145,6 @@ card.innerHTML = `
 `;
 document.getElementById("card").appendChild(card);
 
-
-/* const cards = document.querySelector(".card");
-function createCard(Employee) {
-    const card = document.createElement('div');
-    card.className = "card";
-    card.innerHTML = `
-    <div class="card-body">
-        <h5 class="card-title">${Employee.fullName}</h5>
-        <p class="card-text">${Employee.department}</p>
-        <p class="card-text">${Employee.level}</p>
-        <p class="card-text">${Employee.salary}</p>
-        <img src="${Employee.imageUrl}" alt="">
-    </div>
-`;
-    document.getElementById("card").appendChild(card);
-}
- */
 
 
 
