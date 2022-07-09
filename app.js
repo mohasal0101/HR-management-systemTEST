@@ -1,26 +1,70 @@
-function Employee (EmployeeID, FullName, Department, Level, ImageUrl, Salary) {
-    this.name = EmployeeID;
-    this.fullName = FullName;
-    this.department = Department;
-    this.level = Level;
-    this.imageUrl = ImageUrl;
-    this.salary = Salary;
-    this.generateId = generateId();
-}
+const employee = document.querySelector('.cardHolder');
+{/* <div class="card">
+            <img src="img/Ghazi.jpg">
+            <div class="cardText">
+              <p class="EmployeeID">7281</p>
+              <p class="fullName">Ghazi Samer</p>
+              <h2 class="Department">Junior</h2>
+              <h5>★★★★</h5>
+              <p class="Salary">$675</p>
+              </div> */}
 
-//create Array for depart
+            /* 
+                function createCard(img, EmployeeID, FullName, Department, Level, Salary) {
+                let code =`
+                
+                <div class="cardText">
+                <img src="${img}">
+              <p class="EmployeeID">"${EmployeeID}"</p>
+              <p class="fullName">"${FullName}"</p>
+              <h2 class="Level">${Level}</h2>
+              <p class="Department">${Department}</p>
+              <h5>★★★★</h5>
+              <p class="Salary">"${Salary}"</p>
+              </div>
+                `;
+                employee.innerHTML += code;
+                }
+
+                let item4=["img/Ghazi.jpg",
+                "shows",
+                "men's fashion wear",
+                "Reebok",
+                "★★★",
+                "1000",
+                "30%Off"];
+                                          I
+                    createCard(item4);
+                    createCard(item2);
+                    createCard(item3);
+ */
+
+
+
+              
+               function Employee ( ImageUrl,FullName, Department, Level, EmployeeID, Salary) {
+                this.name = EmployeeID;
+                this.fullName = FullName;
+                this.department = Department;
+                this.level = Level;
+                this.imageUrl = ImageUrl;
+                this.salary = Salary;
+                this.generateId = generateId();
+            
+            } 
+
+
 const Department = ['IT', 'HR', 'Sales'];
-//create Array for level
 const Level = ['Junior', 'Mid-Senior', 'Senior'];
 
 //create a new object
 
-const Employee1 = new Employee (generateId(), 'Ghazi Samer', Department[2],Level[0],"image1", '$10000');
-const Employee2 = new Employee (generateId(), 'Lana Ali', Department[1], Level[2],  "image2", '$2000');
-const Employee3 = new Employee (generateId(), 'Tamara Ayoub', Department[2], Level[2],"image3", '$3000');
-const Employee4 = new Employee (generateId(), 'Safi Walid', Department[0], Level[1],"image4", '$4000');
-const Employee5 = new Employee (generateId(), 'Rana Saleh', Department[0], Level[1],"image5", '$5000');
-const Employee6 = new Employee (generateId(), 'Hadi Ahmad', Department[0], Level[1],"image6", '$6000');
+const Employee1 = new Employee ("../img/Ghazi.jpg",generateId(),'Ghazi Samer', Level[2], Department[2],  '$10000');
+const Employee2 = new Employee ("../img/Lana.jpg",generateId(),'Lana Ali',     Level[2], Department[1], '$2000');
+const Employee3 = new Employee ("../img/Tamara.jpg",generateId(),'Tamara Ayoub',Level[2],Department[2],'$3000');
+const Employee4 = new Employee ("../img/Safi.jpg",generateId(), 'Safi Walid',  Level[1], Department[0], '$4000');
+const Employee5 = new Employee ("../img/Rana.jpg",generateId(), 'Rana Saleh',  Level[0], Department[0], '$5000');
+const Employee6 = new Employee ("../img/Hadi.jpg",generateId(), 'Hadi Ahmad',  Level[1], Department[0], '$6000');
 
 
 console.log(Employee1);
@@ -29,9 +73,6 @@ console.log(Employee3);
 console.log(Employee4);
 console.log(Employee5);
 console.log(Employee6);
-
-
-
 
 
 
@@ -76,12 +117,12 @@ Employee.prototype.setSalary = function (Salary) {
     this.salary = Salary;
     console.log(`${this.generateId}'s salary is ${this.salary}`);
 }
-Employee1.setSalary(randomNumber());
-Employee2.setSalary(randomNumber1());
-Employee3.setSalary(randomNumber2());
-Employee4.setSalary(randomNumber());
-Employee5.setSalary(randomNumber1());
-Employee6.setSalary(randomNumber2());
+Employee1.setSalary("$" +randomNumber());
+Employee2.setSalary("$" +randomNumber1());
+Employee3.setSalary("$" +randomNumber2());
+Employee4.setSalary("$" +randomNumber());
+Employee5.setSalary("$" +randomNumber1());
+Employee6.setSalary("$" +randomNumber2());
 
 
 console.log("----------------------------------------")
@@ -147,10 +188,22 @@ card.innerHTML = `
 document.getElementById("card").appendChild(card);
 
 
-
- 
-
-
+/* const cards = document.querySelector(".card");
+function createCard(Employee) {
+    const card = document.createElement('div');
+    card.className = "card";
+    card.innerHTML = `
+    <div class="card-body">
+        <h5 class="card-title">${Employee.fullName}</h5>
+        <p class="card-text">${Employee.department}</p>
+        <p class="card-text">${Employee.level}</p>
+        <p class="card-text">${Employee.salary}</p>
+        <img src="${Employee.imageUrl}" alt="">
+    </div>
+`;
+    document.getElementById("card").appendChild(card);
+}
+ */
 
 
 
